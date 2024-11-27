@@ -1,0 +1,1 @@
+sudo mknod -m 777 /dev/CDAC2024 C 237 0
