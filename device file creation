@@ -1,1 +1,3 @@
-sudo mknod -m 777 /dev/CDAC2024 C 237 0
+sudo mknod -m <permissions> <dev_name> <dev_type> <MAJOR> <MINOR>
+
+Ex:- sudo mknod -m 777 /dev/CDAC2024 C 237 0
