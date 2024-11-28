@@ -1,0 +1,1 @@
+stat /dev/<Device_File_Name>
