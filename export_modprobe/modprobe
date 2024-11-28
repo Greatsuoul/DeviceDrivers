@@ -1,0 +1,4 @@
+make
+make install
+sudo modprobe <module_name>
+sudo dmesg | tail -10
