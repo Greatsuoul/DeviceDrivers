@@ -1,0 +1,9 @@
+Most of the operations written inside init function
+so we need to write
+1) cdev_init(&file_cdev, &fops);
+2) cdev_add(&file_cdev, dev, 1);
+3) class_create(THIS_MODULE, "Driven_class");
+4) device_create(dev_class, NULL, dev, NULL, "Driven_class")
+5) kmalloc(MEM_SIZE, GFP_KERNEL);
+6)  strcpy(kernel_buffer, "Hello world!!\n");
+dev_create
