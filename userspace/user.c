@@ -7,7 +7,7 @@ int main() {
     int fd;
     char buffer[40];
 
-    fd = open("/dev/abcd", O_RDWR);
+    fd = open("/dev/Driven_class", O_RDWR);
 
     const char *write_data = "Hello Worldd!";
     ssize_t bytes_written = write(fd, write_data, strlen(write_data));
