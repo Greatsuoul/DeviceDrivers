@@ -1,0 +1,30 @@
+sudo apt install make
+sudo apt install git 
+
+/*to download from github*/
+git clone https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
+
+/*dependencies need to download*/ 
+sudo apt update
+sudo apt install gcc-arm-linux-gnueabihf
+sudo apt install libncurses5-dev libncursesw5-dev
+sudo apt install pkg-config
+sudo apt install flex
+sudo apt install bison
+sudo apt install libssl-dev
+sudo apt install u-boot-tools
+
+
+/* To create .config file*/
+make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- menuconfig
+
+/*Build the kernel, device tree, and modules*/
+make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- uImage dtbs
+
+/*building the uImage(bbb board)*/
+make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- LOADADDR=0x82000000 uImage
+Raspberry Pi 3  : 0x8000 or 0x80008000
+Raspberry Pi 4B :0x80008000 or 0x10008000
+
+/*load uImage in target*/
+scp /home/prasad/linux/arch/arm/boot/uImage root@192.168.7.2:/tftpboot/
